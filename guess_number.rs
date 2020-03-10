@@ -5,7 +5,7 @@ use rand::Rng;
 
 fn main() {
     let answer = rand::thread_rng().gen_range(1, 101);
-    println!("Guess Number! (answer) = {}", answer);
+    println!("Guess Number!");
 
     loop {
         println!("Input Number: ");
@@ -25,7 +25,10 @@ fn main() {
         match guess.cmp(&answer) {
             Ordering::Less => println!("It's low"),
             Ordering::Greater => println!("It's high"),
-            Ordering::Equal => println!("Correct!"),
+            Ordering::Equal => {
+                println!("Correct!");
+                break;
+            }
         }
     }
 }
