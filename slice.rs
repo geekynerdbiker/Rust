@@ -1,23 +1,29 @@
 fn main() {
-    print_hello();
-    add_printer(3, 5);
+    let str = String::from("Hello World!");
+    let word1 = first_word(&str[..]);
+    let word2 = second_word(&str[..]);
 
-    let y = {
-        let x = 4;
-        x + 9
-    };
-
-    println!("y = {}, tuple_return.0 = {}, tuple_return.1 = {}", y, returner(y).0, returner(y).1);
+    println!("word1 = {}, word2 = {}", word1, word2);
 }
 
-fn print_hello() {
-    println!("Hello!");
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+    &s[..]
 }
 
-fn add_printer( x :i32, y :i32 ) {
-    println!("Sum is {}.",x+y);
-}
+fn second_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
 
-fn returner(x: i32) -> (i32, i32) {
-    (x+7, x+55)
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[i..];
+        }
+    }
+    &s[..]
 }
