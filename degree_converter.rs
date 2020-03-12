@@ -1,4 +1,6 @@
 //Fahrenheit to Celsius Or Celsius to Fahrenheit
+
+//unSOLVED: String to f64
 use std::io;
 
 fn main() {
