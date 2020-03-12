@@ -4,16 +4,16 @@
 use std::io;
 
 fn main() {
-    print!("Input Degree (EX: 5.0): ");
+    println!("Input Degree (EX: 5.0): ");
 
-    let mut temp= String::new();
-    io::stdin().read_line(&mut temp)
+    let mut input= String::new();
+    io::stdin().read_line(&mut input)
         .expect("ERROR");
 
-    temp.trim().split_whitespace().parse::<f64>().unwrap();
+    let temp = input.parse::<f64>().unwrap();
 
     loop {
-        print!("What is it? (Fahrenheit = 0 / Celsius = 1): ");
+        println!("What is it? (Fahrenheit = 0 / Celsius = 1): ");
         let mut answer = String::new();
         io::stdin().read_line(&mut answer)
             .expect("ERROR");
