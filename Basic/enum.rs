@@ -14,7 +14,7 @@ impl Messege {
 fn main() {
     let m = Messege::Write(String::from("Hello"));
 
-    m.call();s
+    m.call();
 
     let op1 :Option<isize> = None;
     let op2 = Some("Option::Some(var)");
