@@ -8,6 +8,6 @@ fn main() {
 
     let arr1 = [3; 3];
     let arr2: [i32; 5] = [ 1, 9, 2, 8, 3];
-
+s
     println!("\narr1[0] = {}, arr2[1] = {}", arr1[0], arr2[1]);
 }
