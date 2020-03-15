@@ -6,7 +6,7 @@ fn main() {
         Some(3) => println!("3!"),
         _ => (),
     }
-s
+
     println!("\nWith if let syntax below.");
     if let Some(3) = some_u8_value {
         println!("3!");
