@@ -7,10 +7,14 @@ fn main() {
     println!("Input Degree (EX: 5.0): ");
 
     let mut input= String::new();
+
     io::stdin().read_line(&mut input)
         .expect("ERROR");
 
-    let temp = input.parse::<f64>().unwrap();
+    let temp :f64 = match input.trim().parse() {
+        Ok(n) => n,
+        Err(_) => return,
+    };
 
     loop {
         println!("What is it? (Fahrenheit = 0 / Celsius = 1): ");
