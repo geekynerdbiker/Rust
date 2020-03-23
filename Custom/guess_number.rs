@@ -2,7 +2,6 @@ use std::io;
 use std::cmp::Ordering;
 use rand::Rng;
 
-
 fn main() {
     let answer = rand::thread_rng().gen_range(1, 101);
     println!("Guess Number!");
