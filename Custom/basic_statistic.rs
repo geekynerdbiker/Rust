@@ -1,10 +1,11 @@
 use std::io;
+use std::convert::TryInto;
 
 fn main() {
     let mut v1 = Vec::new();
 
     let mut var = input_stream();
-    while var > 0 {
+    loop {
         v1.push(var);
         var = input_stream();
     };
@@ -12,23 +13,23 @@ fn main() {
     println!("{}", average(v1));
 }
 
-fn input_stream() -> isize {
+fn input_stream() -> f64 {
     let mut num = String::new();
 
     io::stdin().read_line(&mut num)
         .expect("Couldn't Read.");
 
-    let num: isize = match num.trim().parse() {
+    let num: f64 = match num.trim().parse() {
         Ok(n) => n,
-        Err(_) => -1,
+        Err(_) => panic!("Input Error!"),
     };
 
     num
 }
 
 // Just Sum
-fn average(v :Vec<isize>) -> isize {
-    let mut sum = 0;
+fn average(v :Vec<f64>) -> f64 {
+    let mut sum = 0.0;
     let len = v.len();
 
     for i in 0..len {
@@ -37,5 +38,5 @@ fn average(v :Vec<isize>) -> isize {
             None => panic!("Index Overflow."),
         }
     }
-    sum
+    sum / 5.0
 }
