@@ -19,7 +19,10 @@ fn main() {
             Err(_) => continue,
         };
 
-        println!("Your Number: {}", guess);
+        if guess < 1 || guess > 100 {
+            println!("Your Number: {}\n Input must be 1 to 100.", guess);
+            continue;
+        }
 
         match guess.cmp(&answer) {
             Ordering::Less => println!("It's low"),
