@@ -4,7 +4,7 @@ fn main() {
             for k in 1..1000 {
                 let mut a = i; let mut b = 1;
 
-                while b < j && a < k {
+                while b < j && a <= k {
                     a *= i;
                     b += 1;
                 }
