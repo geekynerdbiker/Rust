@@ -3,12 +3,12 @@ use std::io;
 fn main() {
     println!("Input Degree (EX: 5.0): ");
 
-    let mut input= String::new();
+    let mut input = String::new();
 
     io::stdin().read_line(&mut input)
         .expect("ERROR");
 
-    let temp :f64 = match input.trim().parse() {
+    let temp: f64 = match input.trim().parse() {
         Ok(n) => n,
         Err(_) => return,
     };
@@ -31,10 +31,8 @@ fn main() {
     }
 }
 
-fn f_to_c( x :f64) -> f64 {
-    (x - 32.0) * 5.0 / 9.0
-}
+fn f_to_c(x: f64) -> f64 { (x - 32.0) * 5.0 / 9.0 }
 
-fn c_to_f( x :f64) -> f64 {
+fn c_to_f(x: f64) -> f64 {
     x * 9.0 / 5.0 + 32.0
 }
